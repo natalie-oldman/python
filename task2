@@ -1,0 +1,10 @@
+# 2. Пользователь вводит время в секундах.
+# Переведите время в часы, минуты и секунды и выведите в формате чч:мм:сс.
+# Используйте форматирование строк.
+
+time = int(input('Введи время в секундах: '))
+hour = time // 3600
+timeWithoutHours = (time - hour * 3600)
+min = timeWithoutHours // 60
+sec = timeWithoutHours % 60
+print(f'{hour:02}:{min:02}:{sec:02}')
