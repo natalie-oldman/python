@@ -7,4 +7,4 @@ hour = time // 3600
 timeWithoutHours = (time - hour * 3600)
 min = timeWithoutHours // 60
 sec = timeWithoutHours % 60
-print(f'{hour}:{min}:{sec}')
+print(f'{hour:02}:{min:02}:{sec:02}')
