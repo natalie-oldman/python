@@ -8,3 +8,27 @@
 # Пользователь ввел число 8. Результат: 8, 7, 5, 3, 3, 2.
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
+
+my_list = [7, 5, 3, 3, 2]
+numb = int(input('Введите натуральное число: '))
+
+while numb
+
+
+for el in my_list:
+    # если введенное число меньше числа из массива, идем сравнивать со след элементом
+    if numb < el:
+        continue
+    # если числа равны, вставляем новое число перед старым
+    elif numb == el:
+        el_index = my_list.index(el) + 1
+        my_list.insert(el_index, numb)
+    # если введенное число больше, вставляем новое число на место старого, остальное сдвигаем
+    elif numb > el:
+        el_index = my_list.index(el)
+        my_list.insert(el_index, numb)
+    else:
+        el_index = len(my_list)
+        my_list.insert(el_index, numb)
+print(my_list)
+
