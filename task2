@@ -3,8 +3,7 @@
 # При нечетном количестве элементов последний сохранить на своем месте.
 # Для заполнения списка элементов необходимо использовать функцию input().
 
-text = input('Введите значения через пробел: ')
-new_list = text.split(' ')
+new_list = input('Введите значения через пробел: ').split(' ')
 for i in range(0, len(new_list) - 1, 2):
     new_list[i], new_list[i + 1] = new_list[i + 1], new_list[i]
 print(new_list)
