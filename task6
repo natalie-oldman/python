@@ -6,3 +6,15 @@
 # Каждое слово состоит из латинских букв в нижнем регистре.
 # Сделать вывод исходной строки, но каждое слово должно начинаться с заглавной буквы.
 # Необходимо использовать написанную ранее функцию int_func().
+
+def int_func(text):
+    latin_letters = list('abcdefghijklmnopqrstuvwxy z')
+    text_letters = list(text)
+    for el in text_letters:
+        if el not in latin_letters:
+            print('Вы использовали не только латинские буквы.')
+            break
+    print(text.title())
+
+text = input('Введите текст в нижнем регистре: ')
+int_func(text)
