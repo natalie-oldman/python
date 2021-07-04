@@ -3,3 +3,10 @@
 # Необходимо получить результат вычисления произведения всех элементов списка.
 #
 # Подсказка: использовать функцию reduce().
+
+my_list = [el for el in range(100, 1001) if el % 2 == 0]
+def my_func(el1, el2):
+    return el1 + el2
+
+from functools import reduce
+print(reduce(my_func, my_list))
