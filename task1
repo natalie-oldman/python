@@ -3,5 +3,5 @@ from sys import argv
 
 hours, salary, bonus = argv
 
-sum = hours * salary + bonus
+sum = int(hours) * int(salary) + int(bonus)
 print('Заработная плата сотрудника - ', sum)
