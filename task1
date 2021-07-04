@@ -3,4 +3,4 @@ from sys import argv
 
 hours, salary, bonus = argv
 
-print('Заработная плата сотрудника - ', hours * salary + bonus)
+return('Заработная плата сотрудника - ', hours * salary + bonus)
