@@ -1,7 +1,12 @@
 
 from sys import argv
 
-hours, salary, bonus = argv
+def salary():
+    try:
+        hours, salary, bonus = map(float, argv[1:])
+        sum = round(hours * salary + bonus, 2)
+        print(f'Заработная плата сотрудника - {sum}')
+    except ValueError:
+        print('Нужно ввести 3 числа.')
 
-sum = int(hours) * int(salary) + int(bonus)
-print('Заработная плата сотрудника - ', sum)
+salary()
