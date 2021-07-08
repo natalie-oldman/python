@@ -1,2 +1,16 @@
 # 5. Создать (программно) текстовый файл, записать в него программно набор чисел, разделенных пробелами.
 # Программа должна подсчитывать сумму чисел в файле и выводить ее на экран.
+
+with open('numbs_with_spaces.txt', 'x') as numbs:
+    print(input('Введите числа, разделенные пробелами: '), file=numbs)
+
+with open('numbs_with_spaces.txt') as numbs:
+    try:
+        line = numbs.readline()
+        numbs_list = line[:-1].split(' ')
+        numbs_sum = 0
+        for numb in numbs_list:
+            numbs_sum += int(numb)
+        print(numbs_sum)
+    except ValueError:
+        'Неверный формат чисел'
