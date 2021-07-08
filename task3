@@ -1,3 +1,17 @@
 # 3. Создать текстовый файл (не программно), построчно записать фамилии сотрудников и величину их окладов.
 # Определить, кто из сотрудников имеет оклад менее 20 тыс., вывести фамилии этих сотрудников.
 # Выполнить подсчет средней величины дохода сотрудников.
+
+with open('salary.txt') as new_file:
+    salary_info = new_file.readlines()
+    salary_list = []
+    print('Сотрудники с зарплатой менее 20000: ')
+    for el in salary_info:
+        space_ind = el.find(' ')
+        salary = float(el[space_ind:])
+        if salary < 20000.00:
+            print(el[:space_ind])
+        salary_list.append(salary)
+
+    print(f'Средняя заработная плата - {round(sum(salary_list) / len(salary_list), 2)}')
+
