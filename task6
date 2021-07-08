@@ -11,3 +11,16 @@
 #
 # Пример словаря:
 # {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
+
+lessons_dict = {}
+with open('lessons.txt') as lessons_info:
+    lessons = lessons_info.readlines()
+    for el in lessons:
+        lesson_name = el[:el.index(':')]
+        els = el.split(' ')[1:]
+        hours_sum = 0
+        for i in els:
+            if '(' in i:
+                hours_sum += int(i[:i.index('(')])
+        lessons_dict[lesson_name] = hours_sum
+    print(lessons_dict)
