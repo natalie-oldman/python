@@ -6,3 +6,15 @@
 # Необходимо написать программу, открывающую файл на чтение и считывающую построчно данные.
 # При этом английские числительные должны заменяться на русские.
 # Новый блок строк должен записываться в новый текстовый файл.
+
+new_file = open('new_numbs.txt', 'x')
+with open('numbs.txt') as old_file:
+    words_rus = ['Один', 'Два', 'Три', 'Четыре']
+    ind = 0
+    for line in old_file:
+        line = line[:-1]
+        space_ind = line.index(' ')
+        word = line[:space_ind]
+        with open('new_numbs.txt', 'a') as new_file:
+            print(line.replace(word, words_rus[ind]), file=new_file)
+        ind +=1
