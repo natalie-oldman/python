@@ -9,3 +9,78 @@
 # Создайте экземпляры классов, передайте значения атрибутов.
 # Выполните доступ к атрибутам, выведите результат.
 # Выполните вызов методов и также покажите результат.
+
+class Car:
+    def __init__(self, speed, color, name, is_police=False):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = is_police
+
+    def go(self):
+        print('Машина поехала')
+
+    def stop(self):
+        print('Машина остановилась')
+
+    def turn(self, direction):
+        direction = 'налево' if direction == 'l' else 'направо'
+        print(f'Машина повернула {direction}')
+
+    def show_speed(self):
+        print(f'Скорость машины - {self.speed}')
+
+class TownCar(Car):
+    def show_speed(self):
+        print(f'Скорость машины - {self.speed}')
+        if self.speed > 60:
+            print('Скорость превышена')
+
+class SportCar(Car):
+    '''Спортивная машина'''
+
+class WorkCar(Car):
+    def show_speed(self):
+        print(f'Скорость машины - {self.speed}')
+        if self.speed > 40:
+            print('Скорость превышена')
+
+
+class PoliceCar(Car):
+    '''Полицейская машина'''
+
+town_car = TownCar(100, 'зеленый', 'VW Polo')
+print(town_car.name)
+print(town_car.color)
+town_car.go()
+town_car.stop()
+town_car.turn('l')
+town_car.show_speed()
+
+sport_car = SportCar(150, 'красный', 'Ferrari')
+print(sport_car.name)
+print(sport_car.color)
+sport_car.go()
+sport_car.stop()
+sport_car.turn('r')
+sport_car.show_speed()
+
+work_car = WorkCar(50, 'белый', 'Kia Rio')
+print(work_car.name)
+print(work_car.color)
+work_car.go()
+work_car.stop()
+work_car.turn('l')
+work_car.show_speed()
+
+# не совсем поняла, что нужно делать с полицейской машиной.
+# В задании указан атрибут is_police, но взаимодействие с ним не указано
+police_car = PoliceCar(120, 'черный', 'VW Tiguan', is_police=True)
+print(police_car.name)
+print(police_car.color)
+police_car.go()
+police_car.stop()
+police_car.turn('l')
+police_car.show_speed()
+
+
