@@ -10,8 +10,36 @@
 # Задачу можно усложнить, реализовав проверку порядка режимов,
 # и при его нарушении выводить соответствующее сообщение и завершать скрипт.
 
+
+from time import sleep
+from itertools import cycle
+
+
 class TrafficLight:
-    def __init__(self, color):
-        self.__color = color
+    __color = [
+        {
+            'color': 'red',
+            'time': 7
+        },
+        {
+            'color': 'yellow',
+            'time': 2
+        },
+        {
+            'color': 'green',
+            'time': 5
+        },
+        {
+            'color': 'yellow',
+            'time': 2
+        }
+    ]
 
     def running(self):
+        for el in cycle(self.__color):
+            print(el['color'])
+            sleep(el['time'])
+
+
+traffic_light = TrafficLight()
+traffic_light.running()
