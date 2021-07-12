@@ -47,7 +47,8 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    '''Полицейская машина'''
+    def __init__(self, speed, color, name, is_police=False):
+        super().__init__(speed, color, name, is_police)
 
 town_car = TownCar(100, 'зеленый', 'VW Polo')
 print(town_car.name)
@@ -56,6 +57,7 @@ town_car.go()
 town_car.stop()
 town_car.turn('l')
 town_car.show_speed()
+print('\n')
 
 sport_car = SportCar(150, 'красный', 'Ferrari')
 print(sport_car.name)
@@ -64,6 +66,7 @@ sport_car.go()
 sport_car.stop()
 sport_car.turn('r')
 sport_car.show_speed()
+print('\n')
 
 work_car = WorkCar(50, 'белый', 'Kia Rio')
 print(work_car.name)
@@ -72,10 +75,9 @@ work_car.go()
 work_car.stop()
 work_car.turn('l')
 work_car.show_speed()
+print('\n')
 
-# не совсем поняла, что нужно делать с полицейской машиной.
-# В задании указан атрибут is_police, но взаимодействие с ним не указано
-police_car = PoliceCar(120, 'черный', 'VW Tiguan', is_police=True)
+police_car = PoliceCar(120, 'черный', 'VW Tiguan')
 print(police_car.name)
 print(police_car.color)
 police_car.go()
